@@ -1,0 +1,160 @@
+#root {
+  width: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  margin-top: 0px;
+  padding: 0;
+}
+
+
+.login-container,
+.signup-container {
+  width: 100%;
+  max-width: 400px;
+  /* ✅ ideal width */
+  margin: 80px auto;
+  /* center horizontally */
+  padding: 24px;
+
+  box-sizing: border-box;
+  border-radius: 8px;
+
+  /* background-color: #ffffff; */
+  /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); */
+}
+
+
+/* email,password inputs */
+.email-input,
+.pswd-input {
+  width: 100%;
+  padding: 10px 10px 10px 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  outline: none;
+  /* remove browser default */
+  transition: all 0.2s ease;
+  border-radius: 5px;
+}
+
+/*  onfocus,active */
+.email-input:focus,
+.email-input:active,
+.pswd-input:focus,
+.pswd-input:active {
+  border-color: black;
+  background-color: #f9f9ff;
+}
+
+/* login,register buttons */
+.login-btn,
+.register-btn {
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* active  */
+.login-btn:active,
+.register-btn:active {
+  background-color: aliceblue;
+  border: none;
+}
+
+/* hover */
+.login-btn:hover,
+.register-btn:hover {
+  border: none;
+}
+
+
+/* register,login test */
+.register-text,
+.login-text {
+  text-align: center;
+}
+
+/* active */
+.register-text:active,
+.login-text:active {
+  color: black
+}
+
+
+/* password - container  */
+.password-wrapper {
+  position: relative;
+
+}
+
+/* showpassword icon */
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 30%;
+  transform: translateY(-20%);
+  cursor: pointer;
+  color: #555;
+}
+
+/* header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #1f2937;
+  color: white;
+  width: 100%;
+}
+
+.app-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-email {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.logout-btn {
+  padding: 6px 12px;
+  border: none;
+  background-color: #ef4444;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #dc2626;
+}
+
+/* title ,profile,addExpense */
+.user-profile-container,.add-expense-container{
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: hsl(0, 25%, 85%);
+    border-radius: 10px;
+}
+
+.user-profile-container h2,.add-expense-container h2 {
+  text-align: center;
+}
+.submitBtn{
+  
+}

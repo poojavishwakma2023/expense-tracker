@@ -1,0 +1,137 @@
+/* .add-expense-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: hsl(0, 25%, 85%);
+    border-radius: 10px;
+}
+
+.add-expense-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+} */
+
+.expense-form {
+    display: grid;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* ✅ Label White */
+.form-group label {
+    font-size: 14px;
+    /* font-weight: 600; */
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* ✅ Input Styling */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    font-size: 14px;
+    /* background: transparent; */
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ✅ Placeholder White with opacity */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(178, 61, 61, 0.6);
+}
+
+.expense-form textarea {
+    min-height: 70px;
+    resize: none;
+}
+
+.expense-form button {
+    padding: 12px;
+    background: #5c6bc0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.expense-form button:hover {
+    background: #3f51b5;
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    padding: 10px 35px 10px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+.select-wrapper::after {
+    content: "▼";
+    position: absolute;
+    right: 12px;
+    bottom: 14px;
+    pointer-events: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+}
+
+.select-wrapper select option {
+    background-color: #1e1e2f;
+    /* dark bg */
+    color: rgba(255, 255, 255, 0.9);
+    /* visible text */
+    border-radius: 10px;
+}
+
+
+.image-upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.image-preview {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.upload-btn {
+    background: #4CAF50;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.upload-btn:hover {
+    background: #45a049;
+}
