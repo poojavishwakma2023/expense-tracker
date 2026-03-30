@@ -185,7 +185,6 @@ function AddExpense() {
           </div>
         </div>
 
-
         <CustomInput
           label="Location"
           type="text"
@@ -195,8 +194,6 @@ function AddExpense() {
           placeholder="Enter location"
           required
         />
-
-
 
         <CustomInput
           label="Date"
