@@ -23,6 +23,8 @@ function AddExpense() {
   const [image, setImage] = useState<string>("");
   const [imagePreview, setImagePreview] = useState<string>("");
 
+
+
   const categoryImages: Record<string, string> = {
     Food: "https://cdn-icons-png.flaticon.com/512/1046/1046784.png",
     Travel: "https://cdn-icons-png.flaticon.com/512/854/854878.png",
@@ -32,8 +34,9 @@ function AddExpense() {
     Other: "https://cdn-icons-png.flaticon.com/512/1828/1828919.png"
   };
 
+  const defaultItemImg = "https://cdn-icons-png.flaticon.com/512/2331/2331943.png";
   const displayImage =
-    imagePreview || categoryImages[category] || "https://via.placeholder.com/80";
+    imagePreview || categoryImages[category] || defaultItemImg;
 
 
   useEffect(() => {
