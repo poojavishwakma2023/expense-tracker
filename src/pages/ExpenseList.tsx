@@ -11,6 +11,7 @@ interface Expenses {
   note?: string;
   place?: string;
   date: string;
+  image:string;
 }
 
 const ExpenseList = () => {

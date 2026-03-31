@@ -9,23 +9,40 @@
 .expense-card {
   background: white;
   border-radius: 10px;
-  padding: 18px;
+  padding: 25px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   transition: 0.2s;
+  margin:20px;
+  max-width: 900px;
 }
 
 .expense-card:hover {
   transform: translateY(-4px);
 }
 
-.expense-header {
+.expense-card .expense-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
   align-items: center;
 }
 
-.amount {
-  font-size: 20px;
+.expense-card .expense-header .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color:black
+}
+
+.expense-card .expense-header .left .category{
+  color:'black'
+}
+ .expense-card .expense-header .left .item-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+ .expense-card .expense-header .amount {
   font-weight: bold;
   color: #e63946;
 }
@@ -55,4 +72,9 @@
   border: none;
   padding: 6px 12px;
   border-radius: 5px;
+}
+
+.item-img{
+  height:60px;
+  width: 50px;
 }
