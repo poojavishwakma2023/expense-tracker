@@ -76,7 +76,7 @@ const styles: Record<string, React.CSSProperties> = {
         backgroundColor: "#1f2937", // dark gray
         color: "#ffffff",
         transition: "width 0.3s ease",
-        overflow: "hidden",
+        overflow: "hidden",  
     },
 
     toggle: {

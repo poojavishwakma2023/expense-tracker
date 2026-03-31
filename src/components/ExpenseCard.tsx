@@ -1,7 +1,7 @@
 import React from 'react'
 import '../stylesComponent/expensecard.css'
 import { useNavigate } from 'react-router-dom';
-import { collection, onSnapshot,deleteDoc ,doc } from 'firebase/firestore'
+import { collection, onSnapshot, deleteDoc, doc } from 'firebase/firestore'
 import { db } from '../../firebase'
 
 interface Expense {
@@ -12,6 +12,7 @@ interface Expense {
     note?: string;
     place?: string;
     date: string;
+    image: string
 }
 
 interface Props {
@@ -19,7 +20,7 @@ interface Props {
 }
 
 const ExpenseCard = ({ expense }: Props) => {
-    console.log('expense ',expense)
+    console.log('expense ', expense)
     const noteText = expense.note?.trim();
     const navigate = useNavigate()
 
@@ -35,12 +36,16 @@ const ExpenseCard = ({ expense }: Props) => {
         <div className="expense-card">
 
             <div className="expense-header">
-                <h3>{expense.title}</h3>
+                <div className="left">
+                    <img src={expense.image} className="item-img" />
+                    <p className="category">{expense.category}</p>
+                </div>
+
                 <span className="amount">₹{expense.amount}</span>
             </div>
 
             <div className="expense-body">
-                <p><b>Category:</b> {expense.category}</p>
+                <p><b>Title:</b> {expense.title}</p>
                 <p><b>Location:</b> {expense.place || "-"}</p>
                 <p><b>Date:</b> {expense.date}</p>
                 {noteText ? (
@@ -52,7 +57,7 @@ const ExpenseCard = ({ expense }: Props) => {
                     navigate("/dashboard/addExpense", { state: expense })
                 }
                 >Edit</button>
-                <button className="delete-btn" onClick={()=>{deleteExpense(expense.id)}}>Delete</button>
+                <button className="delete-btn" onClick={() => { deleteExpense(expense.id) }}>Delete</button>
             </div>
 
         </div>
