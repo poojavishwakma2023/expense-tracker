@@ -13,23 +13,8 @@ import ProtectedRoute from '../src/components/ProtectedRoute'
 ;
 
 function App() {
-//   const [expenses, setExpenses] = useState([]);
 
-  const fetchExpenses = async () => {
-  // const querySnapshot = await getDocs(collection(db, "expenses"));
 
-  // const data = querySnapshot.docs.map(doc => ({
-  //   id: doc.id,
-  //   ...doc.data()
-  // }));
-
-  // setExpenses(data);
-  // console.log('data from app',expenses)
-};
-
-// useEffect(() => {
-//   fetchExpenses();
-// }, []);
 
 
   return (

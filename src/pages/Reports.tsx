@@ -2,7 +2,12 @@ import React from 'react'
 
 const Reports = () => {
     return (
-        <div>hi this is Reports page</div>
+
+        <>
+            <title>Reports | Expense Tracker</title>
+            <div>hi this is Reports page</div>
+        </>
+
     )
 }
 

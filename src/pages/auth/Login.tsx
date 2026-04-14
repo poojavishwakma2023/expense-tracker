@@ -20,47 +20,48 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <h2>Login</h2>
+    <>
+      <title> Login | Expense Tracker</title>
+      <div className="login-container">
+        <h2>Login</h2>
 
-      <input
-        className="email-input"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-
-
-      <div className="password-wrapper">
         <input
-          className="pswd-input"
-          type={visible ? "text" : "password"}
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          className="email-input"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
-        <i
-          className={`fa-solid ${visible ? "fa-eye-slash" : "fa-eye"
-            } eye-icon`}
-          onClick={() => setVisible(!visible)}
-        ></i>
 
 
+        <div className="password-wrapper">
+          <input
+            className="pswd-input"
+            type={visible ? "text" : "password"}
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <i
+            className={`fa-solid ${visible ? "fa-eye-slash" : "fa-eye"
+              } eye-icon`}
+            onClick={() => setVisible(!visible)}
+          ></i>
+
+
+        </div>
+
+        <button
+          className="login-btn"
+          onClick={handleLogin}>Login</button>
+
+        <p
+          className="register-text"
+          onClick={() => navigate("/signup")} style={{ cursor: "pointer" }}>
+          Create account
+        </p>
       </div>
+    </>
 
-
-
-
-      <button
-        className="login-btn"
-        onClick={handleLogin}>Login</button>
-
-      <p
-        className="register-text"
-        onClick={() => navigate("/signup")} style={{ cursor: "pointer" }}>
-        Create account
-      </p>
-    </div>
   );
 }
 

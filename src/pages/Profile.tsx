@@ -179,106 +179,110 @@ function Profile() {
   };
 
   return (
-    <div className='user-profile-container'>
-      <h2>User Profile</h2>
-      {/* <div style={styles.card}> */}
-      {/* Profile Image */}
-      <div style={styles.imageContainer}>
-        {/* <img
+    <>
+      <title>User Profile | Expense Tracker</title>
+
+      <div className='user-profile-container'>
+        <h2>User Profile</h2>
+        {/* <div style={styles.card}> */}
+        {/* Profile Image */}
+        <div style={styles.imageContainer}>
+          {/* <img
           src={imagePreview || "https://via.placeholder.com/80"}
           alt="profile"
           style={styles.image}
         /> */}
-        <div style={styles.avatarWrapper}>
-          {imagePreview ? (
-            <img src={imagePreview} alt="profile" style={styles.image} />
-          ) : (
-            <FaUser size={50} color="#888" />
-          )}
-        </div>
+          <div style={styles.avatarWrapper}>
+            {imagePreview ? (
+              <img src={imagePreview} alt="profile" style={styles.image} />
+            ) : (
+              <FaUser size={50} color="#888" />
+            )}
+          </div>
 
-        <label style={styles.editIcon}>
-          <FaPen size={12} />
-          <input
-            type="file"
-            accept="image/*"
-            hidden
-            onChange={handleImageChange}
+          <label style={styles.editIcon}>
+            <FaPen size={12} />
+            <input
+              type="file"
+              accept="image/*"
+              hidden
+              onChange={handleImageChange}
+            />
+          </label>
+        </div>
+        <form onSubmit={saveProfile}>
+          <div style={styles.heading}>Personal Info</div >
+          <CustomInput
+            label="Name"
+            name="name"
+            value={profile.name}
+            placeholder="Enter name"
+            onChange={handleChange}
+            customLabelStyle={styles.lebelStyle}
+            required
           />
-        </label>
+
+          <CustomInput
+            label="Email"
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={profile.email}
+            onChange={handleChange}
+            customLabelStyle={styles.lebelStyle}
+            required
+          />
+          <CustomInput
+            label="Phone Number"
+            type="text"
+            name="phone"
+            placeholder="Phone"
+            value={profile.phone}
+            onChange={handleChange}
+            customLabelStyle={styles.lebelStyle}
+            required
+          />
+          <CustomInput
+            label="Occupation"
+            type="text"
+            name="occupation"
+            placeholder="Occupation"
+            value={profile.occupation}
+            onChange={handleChange}
+            customLabelStyle={styles.lebelStyle}
+          />
+          <div style={styles.heading}>Financial Settings</div>
+          <CustomInput
+            label="MonthlyBudget"
+            type="number"
+            name="monthlyBudget"
+            placeholder="Monthly Budget"
+            value={profile.monthlyBudget}
+            onChange={handleChange}
+            customLabelStyle={styles.lebelStyle}
+            required
+          />
+
+          <CustomInput
+            label="Currency"
+            type="text"
+            name="currency"
+            placeholder="Currency"
+            value={profile.currency}
+            onChange={handleChange}
+            customLabelStyle={styles.lebelStyle}
+            required
+          />
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <button type="submit" disabled={loading} style={styles.submitBtn}>
+              {loading ? "Saving..." : isEdit ? "Update Profile" : "Save Profile"}
+            </button>
+          </div>
+
+        </form>
+        {/* </div> */}
       </div>
-      <form onSubmit={saveProfile}>
-        <div style={styles.heading}>Personal Info</div >
-        <CustomInput
-          label="Name"
-          name="name"
-          value={profile.name}
-          placeholder="Enter name"
-          onChange={handleChange}
-          customLabelStyle={styles.lebelStyle}
-          required
-        />
-
-        <CustomInput
-          label="Email"
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={profile.email}
-          onChange={handleChange}
-          customLabelStyle={styles.lebelStyle}
-          required
-        />
-        <CustomInput
-          label="Phone Number"
-          type="text"
-          name="phone"
-          placeholder="Phone"
-          value={profile.phone}
-          onChange={handleChange}
-          customLabelStyle={styles.lebelStyle}
-          required
-        />
-        <CustomInput
-          label="Occupation"
-          type="text"
-          name="occupation"
-          placeholder="Occupation"
-          value={profile.occupation}
-          onChange={handleChange}
-          customLabelStyle={styles.lebelStyle}
-        />
-        <div style={styles.heading}>Financial Settings</div>
-        <CustomInput
-          label="MonthlyBudget"
-          type="number"
-          name="monthlyBudget"
-          placeholder="Monthly Budget"
-          value={profile.monthlyBudget}
-          onChange={handleChange}
-          customLabelStyle={styles.lebelStyle}
-          required
-        />
-
-        <CustomInput
-          label="Currency"
-          type="text"
-          name="currency"
-          placeholder="Currency"
-          value={profile.currency}
-          onChange={handleChange}
-          customLabelStyle={styles.lebelStyle}
-          required
-        />
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <button type="submit" disabled={loading} style={styles.submitBtn}>
-            {loading ? "Saving..." : isEdit ? "Update Profile" : "Save Profile"}
-          </button>
-        </div>
-
-      </form>
-      {/* </div> */}
-    </div>
+    </>
   )
 }
 
