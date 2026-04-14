@@ -133,100 +133,104 @@ function AddExpense() {
 
 
   return (
-    <div className="add-expense-container">
-      <h2>{editData ? "Update Expense" : "Add Expense"}</h2>
+    <>
+      <title>AddExpense | Expense Tracker</title>
+      <div className="add-expense-container">
+        <h2>{editData ? "Update Expense" : "Add Expense"}</h2>
 
-      <div className="image-upload-container">
-        <div className="image-preview">
-          <img src={displayImage} alt="expense" />
-        </div>
-
-        <label className="upload-btn">
-          Upload Image
-          <input type="file" accept="image/*" onChange={handleImageChange} hidden />
-        </label>
-      </div>
-
-      <form onSubmit={submitHandler} className="expense-form">
-
-        <CustomInput
-          label="Title"
-          name="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="enter here title"
-          required
-        />
-
-        <CustomInput
-          label="Number"
-          type="number"
-          name="number"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          placeholder="enter Amount"
-          required
-        />
-
-        <div className="form-group">
-          <label>Category</label>
-          <div className="select-wrapper">
-            {/* need to use droptown for more cutomization ,in option can control only background,color,font-size */}
-            <select
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-
-            >
-              <option value="">Select Category</option>
-              <option value="Food">Food</option>
-              <option value="Travel">Travel</option>
-              <option value="Shopping">Shopping</option>
-              <option value="Bills">Bills</option>
-              <option value="Entertainment">Entertainment</option>
-              <option value="Other">Other</option>
-            </select>
+        <div className="image-upload-container">
+          <div className="image-preview">
+            <img src={displayImage} alt="expense" />
           </div>
+
+          <label className="upload-btn">
+            Upload Image
+            <input type="file" accept="image/*" onChange={handleImageChange} hidden />
+          </label>
         </div>
 
-        <CustomInput
-          label="Location"
-          type="text"
-          name="location"
-          value={place}
-          onChange={(e) => setPlace(e.target.value)}
-          placeholder="Enter location"
-          required
-        />
+        <form onSubmit={submitHandler} className="expense-form">
 
-        <CustomInput
-          label="Date"
-          type="date"
-          name="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-          placeholder="enter date"
-          required
-        />
-
-
-        <div className="form-group">
-          <label>Note</label>
-          <textarea
-            value={note}
-            onChange={(e) => setNote(e.target.value)}
-            placeholder="enter detail"
+          <CustomInput
+            label="Title"
+            name="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="enter here title"
+            required
           />
-        </div>
 
-        <button type="submit" disabled={loading}>
-          {loading
-            ? (editData ? "Updating..." : "Adding...")
-            : (editData ? "Update Expense" : "Add Expense")}
-        </button>
+          <CustomInput
+            label="Amount"
+            type="number"
+            name="amount"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            placeholder="enter Amount"
+            required
+          />
 
-      </form >
+          <div className="form-group">
+            <label>Category</label>
+            <div className="select-wrapper">
+              {/* need to use droptown for more cutomization ,in option can control only background,color,font-size */}
+              <select
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
 
-    </div >
+              >
+                <option value="">Select Category</option>
+                <option value="Food">Food</option>
+                <option value="Travel">Travel</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Bills">Bills</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <CustomInput
+            label="Location"
+            type="text"
+            name="location"
+            value={place}
+            onChange={(e) => setPlace(e.target.value)}
+            placeholder="Enter location"
+            required
+          />
+
+          <CustomInput
+            label="Date"
+            type="date"
+            name="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            placeholder="enter date"
+            required
+          />
+
+
+          <div className="form-group">
+            <label>Note</label>
+            <textarea
+              value={note}
+              onChange={(e) => setNote(e.target.value)}
+              placeholder="enter detail"
+            />
+          </div>
+
+          <button type="submit" disabled={loading}>
+            {loading
+              ? (editData ? "Updating..." : "Adding...")
+              : (editData ? "Update Expense" : "Add Expense")}
+          </button>
+
+        </form >
+
+      </div >
+    </>
+
   );
 }
 

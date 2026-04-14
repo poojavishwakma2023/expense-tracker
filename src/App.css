@@ -48,7 +48,7 @@ body {
 .pswd-input:focus,
 .pswd-input:active {
   border-color: black;
-  background-color: #f9f9ff;
+  /* background-color: #f9f9ff; */
 }
 
 /* login,register buttons */

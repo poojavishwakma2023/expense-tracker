@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { collection, onSnapshot,deleteDoc ,doc } from 'firebase/firestore'
+import { collection, onSnapshot, deleteDoc, doc } from 'firebase/firestore'
 import { db } from '../../firebase'
 import ExpenseCard from '../components/ExpenseCard'
 
@@ -11,7 +11,7 @@ interface Expenses {
   note?: string;
   place?: string;
   date: string;
-  image:string;
+  image: string;
 }
 
 const ExpenseList = () => {
@@ -32,11 +32,12 @@ const ExpenseList = () => {
 
   }, []);
 
- 
+
 
 
   return (
     <>
+      <title>Expenses | Expense Tracker</title>
       <div>ExpenseList</div>
 
       {expenses.length === 0 ? (
