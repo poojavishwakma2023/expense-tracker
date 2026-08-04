@@ -1,43 +1,45 @@
 
 import './App.css'
-import Login from './pages/auth/Login'
-import Signup from './pages/auth/Signup'
-import Dashboard from './pages/Dashboard'
-import DashboardHome from './pages/DashboardHome'
-import AddExpense from './pages/AddExpense'
-import ExpenseList from './pages/ExpenseList'
-import Reports from './pages/Reports'
-import Profile from './pages/Profile'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import ProtectedRoute from '../src/components/ProtectedRoute'
-;
+import { lazy, Suspense } from 'react'
+
+
+const Login = lazy(() => import('./pages/auth/Login'));
+const Signup = lazy(() => import('./pages/auth/Signup'));
+const Dashboard = lazy(() => import('./pages/Dashboard'));
+const DashboardHome = lazy(() => import('./pages/DashboardHome'));
+const AddExpense = lazy(() => import('./pages/AddExpense'));
+const ExpenseList = lazy(() => import('./pages/ExpenseList'));
+const Reports = lazy(() => import('./pages/Reports'));
+const Profile = lazy(() => import('./pages/Profile'));
+
+// import ProtectedRoute from './components/ProtectedRoute';
+
 
 function App() {
 
-
-
-
   return (
-    <Routes>
-      <Route path="/" element={<Navigate to="/login" />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/dashboard" element={
-        <ProtectedRoute>
-          <Dashboard />
-        </ProtectedRoute>}>
+    <Suspense fallback={<h1>Loading......</h1> }>
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/dashboard" element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>}>
 
-        {/* child pages */}
-        {/* DEFAULT PAGE */}
-        <Route index element={<DashboardHome />} />
-        <Route path="profile" element={<Profile />} />
-        <Route path="expenses" element={<ExpenseList />} />
-        <Route path="addExpense" element={<AddExpense />} />
-        <Route path="reports" element={<Reports />} />
-
-
-      </Route>
-    </Routes>
+          {/* child pages */}
+          {/* DEFAULT PAGE */}
+          <Route index element={<DashboardHome />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="expenses" element={<ExpenseList />} />
+          <Route path="addExpense" element={<AddExpense />} />
+          <Route path="reports" element={<Reports />} />
+        </Route>
+      </Routes>
+    </Suspense>
   )
 }
 
