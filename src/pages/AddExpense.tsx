@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import CustomInput from "../components/CustomInput";
 import '../stylesComponent/AddExpense.css';
 import { useDispatch } from "react-redux";
-import { addExpense, updateExpense } from '../features/addExpenseSlice';
+import { addExpense } from '../features/addExpenseSlice';
 
 
 

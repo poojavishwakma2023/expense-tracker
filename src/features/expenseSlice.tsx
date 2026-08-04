@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";;
-import { collection, onSnapshot } from "firebase/firestore";
-import { db } from '../../firebase'
-import  type  { AppDispatch } from '../store/store.ts'
+// import { collection, onSnapshot } from "firebase/firestore";
+// import { db } from '../../firebase'
+// import  type  { AppDispatch } from '../store/store.ts'
 
 export type Expense = {
   id: string;
