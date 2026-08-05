@@ -1,7 +1,7 @@
-import React from 'react'
+
 import '../stylesComponent/expensecard.css'
 import { useNavigate } from 'react-router-dom';
-import { collection, onSnapshot, deleteDoc, doc } from 'firebase/firestore'
+import {  deleteDoc, doc } from 'firebase/firestore'
 import { db } from '../../firebase'
 
 interface Expense {

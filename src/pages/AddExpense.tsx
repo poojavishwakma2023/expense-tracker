@@ -4,6 +4,8 @@ import { db } from "../../firebase";
 import { useLocation, useNavigate } from "react-router-dom";
 import CustomInput from "../components/CustomInput";
 import '../stylesComponent/AddExpense.css';
+import { useDispatch } from "react-redux";
+import { addExpense } from '../features/addExpenseSlice';
 
 
 
@@ -23,7 +25,7 @@ function AddExpense() {
   const [image, setImage] = useState<string>("");
   const [imagePreview, setImagePreview] = useState<string>("");
 
-
+  const dispatch = useDispatch()
 
   const categoryImages: Record<string, string> = {
     Food: "https://cdn-icons-png.flaticon.com/512/1046/1046784.png",
@@ -107,7 +109,7 @@ function AddExpense() {
       place,
       date,
       image: image || categoryImages[category] || "",
-      createdAt: new Date()
+      createdAt: new Date().toISOString()
     };
 
     try {
@@ -115,9 +117,20 @@ function AddExpense() {
       console.log("try", expenseData)
       if (editData) {
         await updateDoc(doc(db, "expenses", editData.id), expenseData);
+
+        // save in redux store
+        // dispatch(updateExpense({ id: editData.id, ...expenseData }));
         navigate("/dashboard/expenses")
       } else {
         const docRef = await addDoc(collection(db, "expenses"), expenseData);
+
+        //save in redux store 
+        dispatch(addExpense({
+          id: docRef.id,
+          ...expenseData,
+          
+        }));
+
         console.log("add doc", docRef)
       }
       // toast.success("Expense added successfully");

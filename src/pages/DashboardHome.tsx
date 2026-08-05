@@ -10,7 +10,7 @@ function DashboardHome() {
         <>
             <title>Dashboard | Expense Tracker</title>
             <meta name="description" content="Overview of your income, expenses and balance" />
-            <div style={styles.text}>
+            <div style={{...styles.text,  margin: "40px auto" }}>
                 {/* SUMMARY CARDS */}
                 <SummaryCards />
                 {/* <div>Summery -total balance,total income,total expense</div> */}
@@ -26,11 +26,6 @@ function DashboardHome() {
                 {/* Quick Actions */}
                 {/* <div>Quick Actions- Add Expense , View Reports</div> */}
                 <QuickActions />
-
-
-
-
-
                 {/* <SummaryCards income={50000} expense={totalExpense} />
         <ExpenseForm onAdd={addExpense} />
         <ExpenseList expenses={expenses} onDelete={deleteExpense} />
