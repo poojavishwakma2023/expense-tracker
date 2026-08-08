@@ -23,43 +23,45 @@ const Signup = () => {
     return (
         <>
             <title> Signup | Expense Tracker</title>
-            <div className="signup-container">
-                <h2>Signup</h2>
-                <input
-                    className="email-input"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)} />
-
-
-                <div className="password-wrapper">
-
+            <div className="auth-page">
+                <div className="signup-container">
+                    <h2 className="auth-heading">Signup</h2>
                     <input
-                        className="pswd-input"
-                        type={visible ? "text" : "password"}
-                        placeholder="Password"
-                        value={pswd}
-                        onChange={(e) => setPswd(e.target.value)} />
-                    <i
-                        className={`fa-solid ${visible ? "fa-eye-slash" : "fa-eye"
-                            } eye-icon`}
-                        onClick={() => setVisible(!visible)}
-                    ></i>
+                        className="email-input"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)} />
 
+
+                    <div className="password-wrapper">
+
+                        <input
+                            className="pswd-input"
+                            type={visible ? "text" : "password"}
+                            placeholder="Password"
+                            value={pswd}
+                            onChange={(e) => setPswd(e.target.value)} />
+                        <i
+                            className={`fa-solid ${visible ? "fa-eye-slash" : "fa-eye"
+                                } eye-icon`}
+                            onClick={() => setVisible(!visible)}
+                        ></i>
+
+                    </div>
+
+
+                    <button
+                        className="register-btn"
+                        onClick={handleSignup}>
+                        Register
+                    </button>
+
+                    <p
+                        className="login-text"
+                        onClick={() => navigate("/login")} style={{ cursor: "pointer" }}>
+                        Already have account? Login
+                    </p>
                 </div>
-
-
-                <button
-                    className="register-btn"
-                    onClick={handleSignup}>
-                    Register
-                </button>
-
-                <p
-                    className="login-text"
-                    onClick={() => navigate("/login")} style={{ cursor: "pointer" }}>
-                    Already have account? Login
-                </p>
             </div>
         </>
     );

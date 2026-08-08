@@ -10,20 +10,24 @@ body {
 }
 
 
+.auth-page {
+    min-height: 100vh;      
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    /* padding: 20px; */
+    box-sizing: border-box;
+}
+
+
 .login-container,
 .signup-container {
   width: 100%;
   max-width: 400px;
-  /* ✅ ideal width */
   margin: 80px auto;
-  /* center horizontally */
   padding: 24px;
-
   box-sizing: border-box;
   border-radius: 8px;
-
-  /* background-color: #ffffff; */
-  /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); */
 }
 
 
@@ -76,7 +80,8 @@ body {
 
 /* register,login test */
 .register-text,
-.login-text {
+.login-text,
+.auth-heading {
   text-align: center;
 }
 
@@ -155,6 +160,5 @@ body {
 .user-profile-container h2,.add-expense-container h2 {
   text-align: center;
 }
-.submitBtn{
-  
-}
+
+
