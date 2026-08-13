@@ -4,8 +4,14 @@ import ExpenseChart from '../components/ExpenseChart'
 import RecentTransactions from '../components/RecentTransactions'
 import MonthlyFilter from '../components/MonthlyFilter'
 import QuickActions from '../components/QuickActions'
+import  type { RootState } from '../store/store'
+import { useSelector } from 'react-redux'
+import type { Expenses } from '../types/expense'
 
 function DashboardHome() {
+    const expenses=useSelector((state:RootState)=>state.expenses.list)
+
+
     return (
         <>
             <title>Dashboard | Expense Tracker</title>
@@ -15,8 +21,8 @@ function DashboardHome() {
                 <SummaryCards />
                 {/* <div>Summery -total balance,total income,total expense</div> */}
                 {/* Recent Transactions */}
-                {/* <div>Recent Transactions - Last 5 expenses: with category , amout,date </div> */}
-                <RecentTransactions />
+                {/* <div>Recent Transactions - Last 5 expenses: with category , amount,date </div> */}
+                <RecentTransactions expenses={expenses} />
                 {/* Expense Chart */}
                 {/* <div>Expense Chart - Food, Travel ,Rent,Shopping</div> */}
                 <ExpenseChart />

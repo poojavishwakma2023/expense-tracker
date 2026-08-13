@@ -22,8 +22,10 @@ const Login = () => {
   return (
     <>
       <title> Login | Expense Tracker</title>
+      <div className="auth-page">
+
       <div className="login-container">
-        <h2>Login</h2>
+        <h2 className="auth-heading">Login</h2>
 
         <input
           className="email-input"
@@ -59,6 +61,7 @@ const Login = () => {
           onClick={() => navigate("/signup")} style={{ cursor: "pointer" }}>
           Create account
         </p>
+      </div>
       </div>
     </>
 

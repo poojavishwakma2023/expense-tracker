@@ -1,22 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";;
-// import { collection, onSnapshot } from "firebase/firestore";
-// import { db } from '../../firebase'
-// import  type  { AppDispatch } from '../store/store.ts'
+import type { Expenses } from "../types/expense";
 
-export type Expense = {
-  id: string;
-  title: string;
-  amount: number;
-  category: string;
-  date: string;
-  note?: string;
-  place?: string;
-  image?: string;
-};
+
 
 type ExpenseState = {
-  list: Expense[];
+  list: Expenses[];
 };
 
 const initialState: ExpenseState = {
@@ -27,11 +16,12 @@ const expenseSlice = createSlice({
   name: "expenses",
   initialState,
   reducers: {
-    setExpenses: (state, action: PayloadAction<Expense[]>) => {
+    setExpenseData: (state, action: PayloadAction<Expense[]>) => {
+
       state.list = action.payload;
     }
   }
 });
 
-export const { setExpenses } = expenseSlice.actions;
+export const { setExpenseData } = expenseSlice.actions;
 export default expenseSlice.reducer;

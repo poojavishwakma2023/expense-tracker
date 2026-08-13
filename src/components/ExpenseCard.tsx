@@ -20,7 +20,6 @@ interface Props {
 }
 
 const ExpenseCard = ({ expense }: Props) => {
-    console.log('expense ', expense)
     const noteText = expense.note?.trim();
     const navigate = useNavigate()
 

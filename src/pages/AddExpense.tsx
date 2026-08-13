@@ -131,7 +131,7 @@ function AddExpense() {
           
         }));
 
-        console.log("add doc", docRef)
+       
       }
       // toast.success("Expense added successfully");
       navigate("/dashboard/expenses");
