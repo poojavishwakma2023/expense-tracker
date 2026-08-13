@@ -6,7 +6,7 @@ import MonthlyFilter from '../components/MonthlyFilter'
 import QuickActions from '../components/QuickActions'
 import  type { RootState } from '../store/store'
 import { useSelector } from 'react-redux'
-import type { Expenses } from '../types/expense'
+
 
 function DashboardHome() {
     const expenses=useSelector((state:RootState)=>state.expenses.list)
