@@ -16,7 +16,7 @@ const expenseSlice = createSlice({
   name: "expenses",
   initialState,
   reducers: {
-    setExpenseData: (state, action: PayloadAction<Expense[]>) => {
+    setExpenseData: (state, action: PayloadAction<Expenses[]>) => {
 
       state.list = action.payload;
     }
