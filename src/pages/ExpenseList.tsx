@@ -1,38 +1,12 @@
-import { useState, useEffect } from 'react'
-import { collection, onSnapshot } from 'firebase/firestore'
-import { db } from '../../firebase'
-import ExpenseCard from '../components/ExpenseCard'
 
-interface Expenses {
-  id: string;
-  title: string;
-  amount: number;
-  category: string;
-  note?: string;
-  place?: string;
-  date: string;
-  image: string;
-}
+import ExpenseCard from '../components/ExpenseCard'
+import { useSelector } from 'react-redux'
+import type { RootState } from '../store/store'
+
+
 
 const ExpenseList = () => {
-  const [expenses, setExpenses] = useState<Expenses[]>([])
-
-  useEffect(() => {
-
-    const unsubscribe = onSnapshot(collection(db, "expenses"), (snapshot) => {
-      const expenseList: Expenses[] = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...(doc.data() as Omit<Expenses, "id">)
-      }));
-
-      setExpenses(expenseList);
-    });
-
-    return () => unsubscribe(); // cleanup
-
-  }, []);
-
-
+  const expenses = useSelector((state: RootState) => state.expenses.list)
 
 
   return (
