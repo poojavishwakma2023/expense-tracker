@@ -383,7 +383,7 @@ const Reports = () => {
                   label
                 >
                   {categoryData.map(
-                    (entry, index) => (
+                    (entry) => (
                       <Cell key={entry.name} />
                     )
                   )}
