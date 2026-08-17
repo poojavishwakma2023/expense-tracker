@@ -1,0 +1,49 @@
+.expense-chart {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
+  box-sizing: border-box;
+}
+
+.expense-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.expense-chart-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color:black
+}
+
+.expense-chart-header p {
+  margin: 6px 0 0;
+  color:#777;
+  font-size: 14px;
+}
+
+.expense-chart-header select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #ffffff;
+  color:black;
+  cursor: pointer;
+}
+
+.chart-container {
+  width: 100%;
+}
+
+.no-chart-data {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #777;
+}

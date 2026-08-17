@@ -1,6 +1,6 @@
 
 import Cards from './Cards'
-import '../stylesComponent/Summerycards.css'
+import '../stylesComponent/summeryCards.css'
 
 function SummaryCards() {
   return (
