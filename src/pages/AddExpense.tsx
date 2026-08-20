@@ -3,7 +3,7 @@ import { collection, addDoc, updateDoc, doc } from "firebase/firestore";
 import { db } from "../../firebase";
 import { useLocation, useNavigate } from "react-router-dom";
 import CustomInput from "../components/CustomInput";
-import '../stylesComponent/addExpense.css';
+import  '../stylesComponent/addExpense.css';
 import { useDispatch } from "react-redux";
 import { addExpense } from '../features/addExpenseSlice';
 
